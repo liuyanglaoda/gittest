@@ -1,0 +1,46 @@
+server:
+  port: 8003
+  context-path: /driver-api/
+  tomcat:
+    max-connections: 300
+    max-threads: 1000
+
+spring:
+  datasource:
+    name: carservicedev
+    url: jdbc:mysql://192.168.7.14:3306/carserviceresv3?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: yc@2016
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+  session:
+    store-type: none
+  freemarker:
+    check-template-location: false
+  redis:
+    host: 192.168.7.14
+    port: 6379
+    pool:
+      max-idle: 8
+      min-idle: 1
+      max-active: 300
+      max-wait: 300
+  jmx:
+    enabled: false
+  rabbitmq:
+    username: whzj01
+    password: 123456
+    virtual-host: ResAPPServer
+    addresses: 10.10.10.101:5672
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:public/mybatis-configuration.xml
+
+security:
+    basic:
+      enabled: false
+
+swagger:
+  enable: true
+

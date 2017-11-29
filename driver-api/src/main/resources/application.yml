@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: rytest
+  http:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 1000Mb
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
